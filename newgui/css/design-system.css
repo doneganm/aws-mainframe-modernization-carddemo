@@ -1,0 +1,345 @@
+/**
+ * CardDemo Modern GUI - Design System
+ * Based on IBM Carbon Design System principles
+ */
+
+/* ============================================================================
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ============================================================================ */
+
+:root {
+  /* Colors - Primary */
+  --color-primary: #0f62fe;
+  --color-primary-hover: #0353e9;
+  --color-primary-active: #002d9c;
+  
+  /* Colors - Secondary */
+  --color-secondary: #393939;
+  --color-secondary-hover: #4c4c4c;
+  
+  /* Colors - UI */
+  --color-ui-background: #ffffff;
+  --color-ui-01: #f4f4f4;
+  --color-ui-02: #ffffff;
+  --color-ui-03: #e0e0e0;
+  --color-ui-04: #8d8d8d;
+  --color-ui-05: #161616;
+  
+  /* Colors - Text */
+  --color-text-primary: #161616;
+  --color-text-secondary: #525252;
+  --color-text-placeholder: #a8a8a8;
+  --color-text-on-color: #ffffff;
+  --color-text-helper: #6f6f6f;
+  --color-text-error: #da1e28;
+  
+  /* Colors - Support */
+  --color-support-success: #24a148;
+  --color-support-warning: #f1c21b;
+  --color-support-error: #da1e28;
+  --color-support-info: #0043ce;
+  
+  /* Colors - Interactive */
+  --color-interactive: #0f62fe;
+  --color-interactive-hover: #0353e9;
+  --color-interactive-active: #002d9c;
+  
+  /* Colors - Link */
+  --color-link-primary: #0f62fe;
+  --color-link-secondary: #0043ce;
+  --color-link-visited: #8a3ffc;
+  
+  /* Colors - Border */
+  --color-border-subtle: #e0e0e0;
+  --color-border-strong: #8d8d8d;
+  --color-border-inverse: #161616;
+  
+  /* Spacing Scale */
+  --spacing-01: 0.125rem;  /* 2px */
+  --spacing-02: 0.25rem;   /* 4px */
+  --spacing-03: 0.5rem;    /* 8px */
+  --spacing-04: 0.75rem;   /* 12px */
+  --spacing-05: 1rem;      /* 16px */
+  --spacing-06: 1.5rem;    /* 24px */
+  --spacing-07: 2rem;      /* 32px */
+  --spacing-08: 2.5rem;    /* 40px */
+  --spacing-09: 3rem;      /* 48px */
+  --spacing-10: 4rem;      /* 64px */
+  --spacing-11: 5rem;      /* 80px */
+  --spacing-12: 6rem;      /* 96px */
+  
+  /* Typography */
+  --font-family-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Courier New', monospace;
+  
+  /* Font Sizes */
+  --font-size-01: 0.75rem;    /* 12px */
+  --font-size-02: 0.875rem;   /* 14px */
+  --font-size-03: 1rem;       /* 16px */
+  --font-size-04: 1.125rem;   /* 18px */
+  --font-size-05: 1.25rem;    /* 20px */
+  --font-size-06: 1.5rem;     /* 24px */
+  --font-size-07: 1.75rem;    /* 28px */
+  --font-size-08: 2rem;       /* 32px */
+  --font-size-09: 2.25rem;    /* 36px */
+  --font-size-10: 2.625rem;   /* 42px */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.75;
+  
+  /* Shadows */
+  --shadow-01: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-02: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --shadow-03: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-04: 0 8px 24px rgba(0, 0, 0, 0.15);
+  
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  
+  /* Transitions */
+  --transition-fast: 110ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  --transition-moderate: 240ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  --transition-slow: 400ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  
+  /* Z-Index Scale */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  
+  /* Layout */
+  --header-height: 48px;
+  --sidebar-width: 256px;
+  --sidebar-collapsed-width: 48px;
+  --max-content-width: 1584px;
+}
+
+/* ============================================================================
+   RESET & BASE STYLES
+   ============================================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-03);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-ui-background);
+}
+
+/* ============================================================================
+   TYPOGRAPHY
+   ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-05);
+}
+
+h1 { font-size: var(--font-size-08); }
+h2 { font-size: var(--font-size-07); }
+h3 { font-size: var(--font-size-06); }
+h4 { font-size: var(--font-size-05); }
+h5 { font-size: var(--font-size-04); }
+h6 { font-size: var(--font-size-03); }
+
+p {
+  margin-bottom: var(--spacing-05);
+}
+
+a {
+  color: var(--color-link-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-link-secondary);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--color-link-visited);
+}
+
+code, pre {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-02);
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+/* Display */
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-flex { display: flex !important; }
+.d-grid { display: grid !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+
+/* Flexbox */
+.flex-row { flex-direction: row; }
+.flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.align-start { align-items: flex-start; }
+.align-end { align-items: flex-end; }
+.align-center { align-items: center; }
+.align-stretch { align-items: stretch; }
+.flex-1 { flex: 1; }
+
+/* Spacing */
+.m-0 { margin: 0 !important; }
+.mt-1 { margin-top: var(--spacing-03); }
+.mt-2 { margin-top: var(--spacing-05); }
+.mt-3 { margin-top: var(--spacing-07); }
+.mb-1 { margin-bottom: var(--spacing-03); }
+.mb-2 { margin-bottom: var(--spacing-05); }
+.mb-3 { margin-bottom: var(--spacing-07); }
+.ml-1 { margin-left: var(--spacing-03); }
+.ml-2 { margin-left: var(--spacing-05); }
+.mr-1 { margin-right: var(--spacing-03); }
+.mr-2 { margin-right: var(--spacing-05); }
+
+.p-0 { padding: 0 !important; }
+.p-1 { padding: var(--spacing-03); }
+.p-2 { padding: var(--spacing-05); }
+.p-3 { padding: var(--spacing-07); }
+.pt-1 { padding-top: var(--spacing-03); }
+.pt-2 { padding-top: var(--spacing-05); }
+.pb-1 { padding-bottom: var(--spacing-03); }
+.pb-2 { padding-bottom: var(--spacing-05); }
+.pl-1 { padding-left: var(--spacing-03); }
+.pl-2 { padding-left: var(--spacing-05); }
+.pr-1 { padding-right: var(--spacing-03); }
+.pr-2 { padding-right: var(--spacing-05); }
+
+/* Text */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-success { color: var(--color-support-success); }
+.text-warning { color: var(--color-support-warning); }
+.text-error { color: var(--color-support-error); }
+.text-info { color: var(--color-support-info); }
+
+.font-light { font-weight: var(--font-weight-light); }
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+
+.text-sm { font-size: var(--font-size-02); }
+.text-base { font-size: var(--font-size-03); }
+.text-lg { font-size: var(--font-size-04); }
+.text-xl { font-size: var(--font-size-05); }
+
+/* Width */
+.w-full { width: 100%; }
+.w-auto { width: auto; }
+
+/* Visibility */
+.visible { visibility: visible; }
+.invisible { visibility: hidden; }
+
+/* Overflow */
+.overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-scroll { overflow: scroll; }
+
+/* Position */
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }
+.position-fixed { position: fixed; }
+.position-sticky { position: sticky; }
+
+/* Cursor */
+.cursor-pointer { cursor: pointer; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+/* ============================================================================
+   RESPONSIVE UTILITIES
+   ============================================================================ */
+
+@media (max-width: 672px) {
+  .hide-sm { display: none !important; }
+}
+
+@media (min-width: 672px) and (max-width: 1056px) {
+  .hide-md { display: none !important; }
+}
+
+@media (min-width: 1056px) and (max-width: 1312px) {
+  .hide-lg { display: none !important; }
+}
+
+@media (min-width: 1312px) {
+  .hide-xl { display: none !important; }
+}
+
+/* ============================================================================
+   ACCESSIBILITY
+   ============================================================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-interactive);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Made with Bob */

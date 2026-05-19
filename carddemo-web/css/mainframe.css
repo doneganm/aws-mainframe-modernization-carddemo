@@ -1,0 +1,435 @@
+/* CardDemo - Mainframe Terminal Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.2;
+    overflow: hidden;
+}
+
+#mainframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#screen-container {
+    width: 80ch;
+    height: 24em;
+    background-color: #000000;
+    border: 2px solid #00FF00;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Screen Layout */
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.screen-header {
+    flex-shrink: 0;
+}
+
+.screen-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 1ch;
+    position: relative;
+    scrollbar-width: thin;
+    scrollbar-color: #00FF00 #000000;
+}
+
+.screen-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.screen-body::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+.screen-body::-webkit-scrollbar-thumb {
+    background: #00FF00;
+    border: 1px solid #000000;
+}
+
+.screen-body::-webkit-scrollbar-thumb:hover {
+    background: #00FFFF;
+}
+
+.screen-footer {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+/* Header Lines */
+.header-line {
+    display: grid;
+    grid-template-columns: 18ch 1fr 18ch;
+    align-items: center;
+    padding: 0 1ch;
+    white-space: nowrap;
+    gap: 1ch;
+}
+
+.header-line > div:first-child {
+    grid-column: 1;
+    text-align: left;
+}
+
+.header-line > .title {
+    grid-column: 2;
+    text-align: center;
+    justify-self: center;
+}
+
+.header-line > div:last-child {
+    grid-column: 3;
+    text-align: right;
+    justify-self: end;
+}
+
+.header-line > span:only-child {
+    grid-column: 2;
+}
+
+/* Color Classes */
+.blue { color: #5555FF; }
+.yellow { color: #FFFF55; }
+.turquoise { color: #00FFFF; }
+.cyan { color: #00FFFF; }
+.red { color: #FF5555; }
+.green { color: #00FF00; }
+.neutral { color: #FFFFFF; }
+.white { color: #FFFFFF; }
+
+/* Text Attributes */
+.bright { font-weight: bold; }
+.dim { opacity: 0.6; }
+.underline { text-decoration: underline; }
+
+/* Labels and Values */
+.label {
+    display: inline;
+}
+
+.value {
+    display: inline;
+}
+
+.title {
+    display: inline;
+    text-align: center;
+}
+
+/* Input Fields */
+.input-field {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid currentColor;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    padding: 0;
+    margin: 0 1ch;
+}
+
+.input-field:focus {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.input-field.underline {
+    text-decoration: underline;
+}
+
+/* Input Groups */
+.input-group {
+    display: block;
+    margin: 1em 0;
+    padding: 0 2ch;
+    white-space: pre;
+}
+
+.input-group label {
+    display: inline-block;
+    min-width: 16ch;
+}
+
+.hint {
+    margin-left: 1ch;
+    font-size: 0.9em;
+}
+
+/* Screen Titles */
+.screen-title {
+    text-align: center;
+    margin: 0.5em 0;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+/* Info and Instruction Lines */
+.info-line {
+    text-align: center;
+    margin: 1em 0;
+    padding: 0 2ch;
+}
+
+.instruction {
+    margin: 2em 0 1em 0;
+    padding: 0 2ch;
+}
+
+/* Dollar Bill ASCII Art */
+.dollar-bill {
+    margin: 2em auto;
+    text-align: center;
+}
+
+.bill-line {
+    display: block;
+    white-space: pre;
+}
+
+/* Menu Options */
+.menu-options {
+    margin: 0.5em 0;
+    padding: 0 2ch;
+}
+
+.menu-option {
+    display: block;
+    margin: 0.3em 0;
+    white-space: pre;
+    line-height: 1.2;
+}
+
+.menu-selection {
+    margin-top: 1em;
+}
+
+/* Data Display */
+.data-row {
+    display: block;
+    white-space: pre;
+    padding: 0.2em 2ch;
+}
+
+.data-label {
+    display: inline-block;
+    min-width: 20ch;
+}
+
+.data-value {
+    display: inline;
+}
+
+/* Tables */
+.data-table {
+    margin: 1em 0;
+    width: 100%;
+}
+
+.table-header {
+    display: block;
+    white-space: pre;
+    padding: 0.2em 1ch;
+    border-bottom: 1px solid currentColor;
+}
+
+.table-row {
+    display: block;
+    white-space: pre;
+    padding: 0.2em 1ch;
+}
+
+.table-row:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.table-separator {
+    display: block;
+    white-space: pre;
+    padding: 0 1ch;
+}
+
+/* Selection Fields */
+.select-field {
+    width: 2ch;
+    text-align: center;
+}
+
+/* Error Messages */
+.error-message {
+    display: block;
+    padding: 0 1ch;
+    min-height: 1.2em;
+    white-space: pre-wrap;
+}
+
+/* Function Keys */
+.function-keys {
+    display: block;
+    padding: 0 1ch;
+    white-space: pre;
+}
+
+/* Pagination */
+.pagination-info {
+    text-align: right;
+    padding-right: 2ch;
+}
+
+/* Form Sections */
+.form-section {
+    margin: 1em 0;
+    padding: 0 2ch;
+}
+
+.form-section-title {
+    text-align: center;
+    margin: 1em 0;
+}
+
+/* Address Display */
+.address-block {
+    margin: 0.5em 0;
+}
+
+/* Customer Details */
+.customer-details {
+    margin: 1em 0;
+}
+
+.detail-line {
+    display: block;
+    white-space: pre;
+    padding: 0.2em 2ch;
+}
+
+/* Buttons (styled as mainframe selections) */
+.mf-button {
+    background-color: transparent;
+    border: 1px solid currentColor;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.2em 1ch;
+    cursor: pointer;
+    margin: 0 1ch;
+}
+
+.mf-button:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+.mf-button:active {
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none !important;
+}
+
+/* Cursor Simulation */
+.cursor-position {
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+/* Scrollbar Styling - Removed as mainframe terminals don't have scrollbars */
+/* The screen-body now uses overflow: hidden to maintain authentic 80x24 display */
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+    
+    #mainframe-container {
+        padding: 10px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    #screen-container {
+        border-color: black;
+    }
+    
+    .blue { color: #0000CC; }
+    .yellow { color: #CCCC00; }
+    .turquoise { color: #00CCCC; }
+    .red { color: #CC0000; }
+    .green { color: #00CC00; }
+}
+
+/* Animation for Screen Transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.screen {
+    animation: fadeIn 0.2s ease-in;
+}
+
+/* Focus Indicators */
+input:focus,
+button:focus {
+    outline: 2px solid #00FF00;
+    outline-offset: 2px;
+}
+
+/* Disabled State */
+input:disabled,
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Selection Highlight */
+::selection {
+    background-color: rgba(0, 255, 0, 0.3);
+    color: #FFFFFF;
+}
+
+/* System ID Positioning */
+.system-id {
+    position: absolute;
+    right: 15ch;
+}
+
+/* Made with Bob */
