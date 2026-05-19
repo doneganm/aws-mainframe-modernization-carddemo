@@ -3,8 +3,18 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)
 
+## Fork Notice
+
+This repository is a fork of the [AWS Mainframe Modernization CardDemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) sample application, originally created by Amazon Web Services.
+
+**Original Repository**: https://github.com/aws-samples/aws-mainframe-modernization-carddemo
+**License**: Apache License 2.0
+**Copyright**: Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+This fork includes additional enhancements and modifications while maintaining compatibility with the original Apache 2.0 license.
+
 ## Executive Summary
-CardDemo is a comprehensive mainframe application that simulates a credit card management system. Designed specifically to showcase AWS and partner technologies for mainframe migration and modernization scenarios, it provides a realistic environment for testing various modernization approaches including discovery, migration, performance testing, service enablement, and more.
+CardDemo is a comprehensive mainframe application that simulates a credit card management system. This repository is a fork of the [AWS samples repository](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) with additional enhancements. Designed specifically to showcase AWS and partner technologies for mainframe migration and modernization scenarios, it provides a realistic environment for testing various modernization approaches including discovery, migration, performance testing, service enablement, and more.
 
 ## Table of Contents
 - [Description](#description)
@@ -381,7 +391,12 @@ Feel free to raise issues, create code, and submit merge requests for enhancemen
 
 ## License
 
-This project is intended to be a community resource and is released under the Apache 2.0 license.
+This project is a fork of the [AWS Mainframe Modernization CardDemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) and is released under the Apache License 2.0.
+
+**Original Work**: Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+**This Fork**: Maintains the Apache 2.0 license with additional contributions.
+
+See the [LICENSE](LICENSE) file for the full Apache 2.0 license text and the [NOTICE](NOTICE) file for copyright information.
 
 ## Project Status
 
