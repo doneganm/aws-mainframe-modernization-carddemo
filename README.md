@@ -3,6 +3,12 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)
 
+## x86 Versions Created Using IBM Bob at the IBM Bobathon, 13th May 2026:
+**Web version of CICS CardDemo application** https://github.com/doneganm/aws-mainframe-modernization-carddemo/tree/main/carddemo-web
+
+
+**Modernised version of application using HTML/JavaScipt as single page web app** https://github.com/doneganm/aws-mainframe-modernization-carddemo/tree/main/newgui
+
 ## Fork Notice
 
 This repository is a fork of the [AWS Mainframe Modernization CardDemo](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) sample application, originally created by Amazon Web Services.
@@ -13,11 +19,6 @@ This repository is a fork of the [AWS Mainframe Modernization CardDemo](https://
 
 This fork includes additional enhancements and modifications while maintaining compatibility with the original Apache 2.0 license.
 
-## x86 Versions Created Using IBM Bob:
-**Web version of CICS CardDemo application** https://github.com/doneganm/aws-mainframe-modernization-carddemo/tree/main/carddemo-web
-
-
-**Modernised version of application using HTML/JavaScipt as single page web app** https://github.com/doneganm/aws-mainframe-modernization-carddemo/tree/main/newgui
 
 ## Executive Summary
 CardDemo is a comprehensive mainframe application that simulates a credit card management system. This repository is a fork of the [AWS samples repository](https://github.com/aws-samples/aws-mainframe-modernization-carddemo) with additional enhancements. Designed specifically to showcase AWS and partner technologies for mainframe migration and modernization scenarios, it provides a realistic environment for testing various modernization approaches including discovery, migration, performance testing, service enablement, and more.
